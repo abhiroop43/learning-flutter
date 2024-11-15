@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:namer_app/app_state.dart';
+import 'package:namer_app/components/history_list.dart';
 import 'package:provider/provider.dart';
 
+import 'common/app_state.dart';
 import 'components/big_card.dart';
 
 class GeneratorPage extends StatelessWidget {
@@ -21,6 +22,8 @@ class GeneratorPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Expanded(flex: 3, child: HistoryListView()),
+          SizedBox(height: 10),
           BigCard(pair: pair),
           SizedBox(height: 10),
           Row(
@@ -42,6 +45,7 @@ class GeneratorPage extends StatelessWidget {
               ),
             ],
           ),
+          Spacer(flex: 2),
         ],
       ),
     );
