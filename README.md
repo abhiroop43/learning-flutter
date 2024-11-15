@@ -1,4 +1,4 @@
-# fuck_me_not
+# Namer App
 
 A new Flutter project.
 
