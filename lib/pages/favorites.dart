@@ -21,25 +21,34 @@ class FavoritesPage extends StatelessWidget {
 
     var favorites = appState.favorites
         .map((m) => ListTile(
-              leading: IconButton.outlined(
-                  onPressed: () {
-                    print('removing favorite:${m.asLowerCase}');
-                    appState.removeFavorite(m);
-                  },
-                  icon: Icon(Icons.delete_outline)),
-              title: Card(
-                color: theme.colorScheme.primary,
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      m.asLowerCase,
-                      style: textStyle,
+            leading: IconButton.outlined(
+                onPressed: () {
+                  print('removing favorite:${m.asLowerCase}');
+                  appState.removeFavorite(m);
+                },
+                icon: Icon(Icons.delete_outline)),
+            title: Card(
+              color: theme.colorScheme.primary,
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: MergeSemantics(
+                    child: Wrap(
+                      children: [
+                        Text(
+                          m.first,
+                          style: textStyle,
+                        ),
+                        Text(
+                          m.second,
+                          style: textStyle,
+                        )
+                      ],
                     ),
                   ),
                 ),
               ),
-            ))
+            )))
         .toList();
     return SafeArea(
       child: ListView(
