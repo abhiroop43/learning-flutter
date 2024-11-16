@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 
 import 'common/app_state.dart';
 
-import 'favorites.dart';
-import 'generator.dart';
+import 'pages/favorites.dart';
+import 'pages/generator.dart';
 
 void main() {
   runApp(MyApp());

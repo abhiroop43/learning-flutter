@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:namer_app/components/history_list.dart';
 import 'package:provider/provider.dart';
 
-import 'common/app_state.dart';
-import 'components/big_card.dart';
+import '../common/app_state.dart';
+import '../components/big_card.dart';
 
 class GeneratorPage extends StatelessWidget {
   @override

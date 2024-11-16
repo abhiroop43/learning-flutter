@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'common/app_state.dart';
+import '../common/app_state.dart';
 
 class FavoritesPage extends StatelessWidget {
   @override
@@ -21,7 +21,12 @@ class FavoritesPage extends StatelessWidget {
 
     var favorites = appState.favorites
         .map((m) => ListTile(
-              leading: Icon(Icons.favorite),
+              leading: IconButton.outlined(
+                  onPressed: () {
+                    print('removing favorite:${m.asLowerCase}');
+                    appState.removeFavorite(m);
+                  },
+                  icon: Icon(Icons.delete_outline)),
               title: Card(
                 color: theme.colorScheme.primary,
                 child: Center(
